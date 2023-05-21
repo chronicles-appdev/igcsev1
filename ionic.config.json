@@ -1,0 +1,7 @@
+{
+  "name": "igcsev1",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
