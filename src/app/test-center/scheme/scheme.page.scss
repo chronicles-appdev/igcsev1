@@ -1,0 +1,109 @@
+
+ion-header {
+    .header {
+
+    margin: 2rem 0px 1rem -1em;
+
+    
+        display: flex;
+        align-items: center;
+    ion-chip {
+        margin-right: auto; /* Push the ion-chip to the left */
+        --background: white;
+    }
+
+    ion-label {
+        text-align: center;
+        margin: 0 31%; 
+    }
+    }
+
+    .dash {
+
+        background-color: rgba(116, 28, 166, 1);
+        ;
+        padding: 15px 15px 5px 25px;
+        color: white;
+            // overflow: auto;
+            // width: 100%;
+            // margin: 10px 0px 10px 0px;
+        
+    
+
+
+    }
+    .dash2 {
+
+    
+        padding: 15px 15px 5px 25px;
+        color: black;
+        font-family: 'Space Grotesk';
+        font-style: normal;
+        font-weight: 500;
+        font-size: 12px;
+        line-height: 21px;
+            
+        
+        
+
+
+        }
+
+    
+}
+ion-content {
+  
+
+    .each {
+        margin: 1rem;
+        .topic {
+
+            //position: absolute;
+            width: 347px;
+            height: 0px;
+            margin: 1rem;
+            border: 1px solid #000000;
+        }
+
+        .content {
+            width: 365px;
+            height: 188px;
+            margin: 1rem;
+            font-family: 'Space Grotesk';
+            font-style: normal;
+            font-weight: 500;
+            font-size: 12px;
+            line-height: 37px;
+            /* or 312% */
+
+
+            color: #000000;
+
+
+            /* Inside auto layout */
+
+            flex: none;
+            order: 0;
+            flex-grow: 0;
+        }
+    button {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        padding: 10px 40px;
+        gap: 6.32px;
+        width: 169px;
+        height: 33px;
+        background: linear-gradient(180deg, #5293EE 14.06%, #7625E6 71.35%);
+        border-radius: 6.32353px;
+        color: white;
+        flex: none;
+        order: 1;
+        flex-grow: 0;
+        margin-left: 25%;
+    }
+    }
+
+}
+  

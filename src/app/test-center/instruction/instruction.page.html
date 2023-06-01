@@ -1,0 +1,49 @@
+
+<ion-header mode="ios" >
+  <ion-toolbar>
+
+  <div class="header">
+   
+    <ion-chip >
+      <ion-icon name="chevron-back-outline" color="primary"></ion-icon>
+    </ion-chip>
+   
+   
+    <ion-label ><img src="../../../assets/centlib.png" height="20px"> Mathematics (Basic One)</ion-label>
+     </div>
+   
+  </ion-toolbar>
+</ion-header>
+<ion-content [fullscreen]="true">
+  
+  <div class="content">
+    <div class="instruction">
+      <h5>INSTRUCTION</h5>
+      <p>Please read the following instructions carefully, before you proceed to take the test</p>
+      
+    </div>
+    <div class="must">
+      <h5>You must </h5>
+      <ul>
+        <li>A quiet room for <span style="color: red;"> <strong>&nbsp;&nbsp;</strong></span> minutes</li>
+        <li>Finish test in one sitting</li>
+      </ul>
+      
+    </div>
+    <div class="how">
+      <h5>How it works</h5>
+      <ul>
+        <li>You will be given <span style="color: red;"> &nbsp;<strong>  &nbsp; </strong></span> minutes to answer <span style="color: red;"> <strong>&nbsp;&nbsp;</strong></span> questions</li>
+        <li>Going away from the test screen will automatically submit your test for you.</li>
+      </ul>
+      
+    </div>
+
+    <div class="confirmation">
+      <!-- <ion-checkbox labelPlacement="end">I understand all the instructions </ion-checkbox> -->
+      <button (click)="start()">Start Test</button>
+    </div>
+
+  </div>
+ </ion-content>
+ 

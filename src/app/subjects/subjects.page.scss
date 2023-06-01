@@ -1,0 +1,53 @@
+ion-input {
+    border-radius: 5px;
+    margin-top: 1rem;
+    padding: 4px;
+}
+.logo {
+   margin-top: 2rem;
+   margin-left: 1rem;
+}
+ion-button {
+   width: 100%;
+}
+.text {
+    
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 400;
+ //   font-size: 24px;
+    line-height: 203.5%;
+    /* identical to box height, or 49px */
+
+
+/* Secondary color/Black */
+
+color: #0F0909;
+}
+ion-checkbox {
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 130%;
+    color: #555555;
+
+    
+}
+.regSectionM{
+   padding: 1rem;
+}
+
+.sticky {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    width: fit-content;
+    height: fit-content;
+    transform: translate(0, 100%);
+    margin-bottom: -7rem;
+   }
+  
+  

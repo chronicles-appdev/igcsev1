@@ -1,0 +1,76 @@
+
+
+<ion-content [fullscreen]="true">
+
+  <ion-toolbar  style="--background: white;">
+    <img src="../../assets/banner.png">
+   </ion-toolbar>
+
+
+   <ion-grid>
+    <ion-row>
+      <div class="signup">
+        <h2>Sign Up</h2>
+        <p>Please enter your correct details below</p>
+      </div>
+    </ion-row>
+
+
+    <ion-row>
+      <ion-col>
+
+        <form [formGroup]="registrationForm">
+
+        <ion-list>
+
+        
+        
+          <ion-item lines="none">
+            <ion-input
+            placeholder="Enter your Email Address"
+              type="email"
+              label="Email"
+              labelPlacement="floating"
+              errorText="Invalid email"
+              formControlName="email"
+              ngModel
+              email
+            ></ion-input>
+          </ion-item>
+
+        
+
+          <ion-item lines="none">
+            <ion-input
+            placeholder="Enyter Password"
+              type="password"
+              label=" Password"
+              labelPlacement="floating"
+              errorText="Invalid Password"
+              formControlName="password"
+               [counter]="true"
+              ngModel
+              password
+            ></ion-input>
+          </ion-item>
+
+          <ion-item lines="none">
+            <ion-checkbox  justify="start"  labelPlacement="end">Remember me</ion-checkbox>
+          </ion-item>
+          <ion-item lines="none">
+          <ion-button type="submit"   [disabled]="registrationForm.invalid">Sign In</ion-button>
+          </ion-item>
+
+          <p class="ion-text-center" style="margin-left: 1rem; color: #741CA6;">Forgot Password?</p>
+          <p class="ion-text-center" style="margin-left: 1rem;">Do not have an Account? <a href="register">Sign Up</a></p>
+        </ion-list>
+        </form>
+      </ion-col>
+    </ion-row>
+   </ion-grid>
+
+
+
+
+
+</ion-content>

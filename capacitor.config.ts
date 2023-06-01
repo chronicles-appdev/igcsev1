@@ -1,8 +1,8 @@
 import { CapacitorConfig } from '@capacitor/cli';
 
 const config: CapacitorConfig = {
-  appId: 'io.ionic.starter',
-  appName: 'igcsev1',
+  appId: 'com.successbox.igcse',
+  appName: 'IGCSE MasterPre',
   webDir: 'www',
   server: {
     androidScheme: 'https'

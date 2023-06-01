@@ -1,3 +1,53 @@
 <ion-app>
-  <ion-router-outlet></ion-router-outlet>
+    <!-- <ion-menu side="start" contentId="main-content"> -->
+      
+      <ion-menu type="reveal" content-id="main-content">
+       
+        <ion-content>
+          <ion-list id="inbox-list">
+            <ion-list-header>IGCSE MasterPrep</ion-list-header>
+            <ion-note>Powered by Chronicles SDC</ion-note>
+        
+            <ion-menu-toggle auto-hide="false" >
+              <ion-item routerDirection="root" routerLink="home" lines="none" detail="false" routerLinkActive="selected">
+                <ion-icon aria-hidden="true" slot="start" ios="home-outline" md="home-outline'"></ion-icon>
+                <ion-label>Home</ion-label>
+              </ion-item>
+            </ion-menu-toggle>
+          </ion-list>
+        
+          <ion-list id="labels-list">
+            <ion-list-header>Menu Items</ion-list-header>
+        <ion-item  routerDirection="root" routerLink="take-test" lines="none" detail="false" >
+          <ion-icon aria-hidden="true" slot="start" ios="clipboard-outline" md="clipboard-outline"></ion-icon>
+          <ion-label>Take Test</ion-label>
+        </ion-item>
+        <ion-item  routerDirection="root" routerLink="history" lines="none" detail="false" >
+          <ion-icon aria-hidden="true" slot="start" ios="podium-outline" md="podium-outline"></ion-icon>
+          <ion-label>Test History</ion-label>
+        </ion-item>
+
+
+            <ion-item  routerDirection="root" routerLink="profile" lines="none" detail="false" >
+              <ion-icon aria-hidden="true" slot="start" ios="bookmark-outline" md="bookmark-outline"></ion-icon>
+              <ion-label>My Profile</ion-label>
+            </ion-item>
+
+            <ion-item  routerDirection="root" routerLink="settings" lines="none" detail="false" >
+              <ion-icon aria-hidden="true" slot="start" ios="settings-outline" md="settings-outline"></ion-icon>
+              <ion-label>Settings </ion-label>
+            </ion-item>
+
+
+            <ion-item routerDirection="root" routerLink="home" lines="none" detail="false">
+              <ion-icon aria-hidden="true" slot="start" ios="exit-outline" md="exit-outline"></ion-icon>
+              <ion-label>Exit App </ion-label>
+            </ion-item>
+          </ion-list>
+        </ion-content>
+      </ion-menu>
+    <!-- </ion-menu> -->
+
+
+  <ion-router-outlet  id="main-content"></ion-router-outlet>
 </ion-app>

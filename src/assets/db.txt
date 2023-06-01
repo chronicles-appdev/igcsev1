@@ -1,0 +1,110 @@
+{
+  "database": "igcse",
+  "version": 1,
+  "encrypted": false,
+  "mode": "full",
+  "tables": [
+    {
+      "name": "test",
+      "schema": [
+        { "column": "id", "value": "INTEGER PRIMARY KEY NOT NULL" },
+        { "column": "test_name", "value": "TEXT NOT NULL" },
+        { "column": "duration", "value": "INTEGER NOT NULL" },
+        { "column": "num_question", "value": "INTEGER NOT NULL" },
+        { "column": "last_modified", "value": "INTEGER DEFAULT (strftime('%s', 'now'))" }
+      ],
+      "values": [
+        [1, "Speed Test", 10, 10],
+        [2, "IGCSE Simulator Test", 45, 40]
+       
+      ]
+    }, 
+    {
+      "name": "q_year",
+      "schema": [
+        { "column": "id", "value": "INTEGER PRIMARY KEY NOT NULL" },
+        { "column": "year_name", "value": "TEXT NOT NULL" },
+        { "column": "last_modified", "value": "INTEGER DEFAULT (strftime('%s', 'now'))" }
+      ],
+      "values": [
+        [1, "Speed Test", 10, 10],
+        [2, "IGCSE Simulator Test", 45, 40]
+       
+      ]
+    },
+    {
+      "name": "subjects",
+      "schema": [
+        { "column": "id", "value": "INTEGER PRIMARY KEY NOT NULL" },
+        { "column": "subject_name", "value": "TEXT NOT NULL" },
+        { "column": "last_modified", "value": "INTEGER DEFAULT (strftime('%s', 'now'))" }
+      ],
+      "values": [
+        [1, "Biology"],
+        [2, "Chemistry"],
+        [3, "Economics"],
+        [4, "Physics"],
+        [5, "Science (Combined)"],
+        [6, "English"],
+        [7, "Geography"],
+        [8, "Accounting"],
+        [9, "Mathematics"],
+        [10, "ICT"]
+       
+      ]
+    },
+    {
+      "name": "test_taken",
+      "schema": [
+        { "column": "id", "value": "INTEGER PRIMARY KEY NOT NULL" },
+        { "column": "subject_id", "value": "INTEGER NOT NULL" },
+        { "column": "test_id", "value": "INTEGER NOT NULL" },
+        { "column": "year_id", "value": "INTEGER NOT NULL" },
+        { "column": "correctly_answ", "value": "TEXT" },
+        { "column": "wrongly_answ", "value": "TEXT" },
+        { "column": "last_modified", "value": "INTEGER DEFAULT (strftime('%s', 'now'))" }
+      ]
+    },
+    {
+      "name": "marking",
+      "schema": [
+        { "column": "id", "value": "INTEGER PRIMARY KEY NOT NULL" },
+        { "column": "question_id", "value": "INTEGER NOT NULL" },
+        { "column": "test_taken_id", "value": "INTEGER NOT NULL" },
+        { "column": "selected_id", "value": "INTEGER NOT NULL" },
+        { "column": "correct_id", "value": "INTEGER NOT NULL" },
+        { "column": "last_modified", "value": "INTEGER DEFAULT (strftime('%s', 'now'))" }
+      ]
+    },
+    {
+      "name": "questions",
+      "schema": [
+        { "column": "id", "value": "INTEGER PRIMARY KEY NOT NULL" },
+        { "column": "subject_id", "value": "INTEGER NOT NULL" },
+        { "column": "qyear", "value": "TEXT" },
+        { "column": "graphics", "value": "TEXT" },
+        { "column": "questionText", "value": "TEXT" },
+        { "column": "last_modified", "value": "INTEGER DEFAULT (strftime('%s', 'now'))" }
+      ],
+      "values": [
+        [1, 2, "2019", "adb.png", "Ionic Academy Membership EUR"],
+        [2, 2,  "2019", "adb.png", "Ionic Academy Membership EUR"],
+        [3, 2,  "2019", "adb.png", "Ionic Academy Membership EUR"]
+      ]
+    },
+    {
+      "name": "options",
+      "schema": [
+        { "column": "id", "value": "INTEGER PRIMARY KEY NOT NULL" },
+        { "column": "question_id", "value": "TEXT NOT NULL" },
+        { "column": "optionText", "value": "TEXT" },
+        { "column": "last_modified", "value": "INTEGER DEFAULT (strftime('%s', 'now'))" }
+      ],
+      "values": [
+        [1, 2, "Ionic Academy Membership EUR"],
+        [2, 2, "Ionic Academy Membership EUR"],
+        [3, 2, "Ionic Academy Membership EUR"]
+      ]
+    }
+  ]
+}

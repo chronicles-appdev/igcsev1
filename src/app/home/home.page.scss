@@ -1,27 +1,113 @@
-#container {
-  text-align: center;
+ion-content {
+  .top-button {
+    margin: 1rem;
+    float: right;
 
-  position: absolute;
-  left: 0;
-  right: 0;
-  top: 50%;
-  transform: translateY(-50%);
-}
+    ion-button {
+      border: 0.5px;
+      width: 10rem;
+    }
+  }
 
-#container strong {
-  font-size: 20px;
-  line-height: 26px;
-}
+  .second-box {
+    margin: 7rem 0 0 1rem;
+    width: 10rem;
+    height: 10rem;
+    background-color: gray;
+    border-radius: 1rem;
+    padding: 1rem;
+    color: white;
+    
+    h3 {
 
-#container p {
-  font-size: 16px;
-  line-height: 22px;
+    }
+  }
 
-  color: #8c8c8c;
+  ion-grid {
+    margin: 1rem;
+    ion-row {
 
-  margin: 0;
-}
+      ion-col {
+        //margin-left: 1px;
+        .testTaken {
+          border: 1px solid lightblue;
+          border-radius: 1rem;
+          margin-top: 1rem;
+          width: 95%;
+          height: 10rem;
 
-#container a {
-  text-decoration: none;
+          .left {
+            margin: 1rem;
+            float: left;
+          }
+
+          .right {
+            margin: 1rem;
+            float: right;
+
+            .icon {
+              display: block;
+              padding: 5px;
+              background-color: var(--ion-color-primary);
+              color: white;
+              border-radius: 2rem;
+              margin-bottom: 4rem;
+            }
+          }
+        }
+        .testPassed {
+                   border: 1px solid rgb(69, 130, 77);
+                   border-radius: 1rem;
+                   margin-top: 1rem;
+                   width: 95%;
+                   height: 10rem;
+        
+                   .left {
+                     margin: 1rem;
+                     float: left;
+                   }
+        
+                   .right {
+                     margin: 1rem;
+                     float: right;
+        
+                     .icon {
+                       display: block;
+                       padding: 5px;
+                       background-color: var(--ion-color-primary);
+                       color: white;
+                       border-radius: 2rem;
+                       margin-bottom: 4rem;
+                     }
+                   }
+        }
+        .testFailed {
+                   border: 1px solid rgb(196, 121, 14);
+                   border-radius: 1rem;
+                   margin-top: 1rem;
+                   width: 95%;
+                   height: 10rem;
+        
+                   .left {
+                     margin: 1rem;
+                     float: left;
+                   }
+        
+                   .right {
+                     margin: 1rem;
+                     float: right;
+        
+                     .icon {
+                       display: block;
+                       padding: 5px;
+                       background-color: var(--ion-color-primary);
+                       color: white;
+                       border-radius: 2rem;
+                       margin-bottom: 4rem;
+                     }
+                   }
+        }
+      }
+    }
+  }
 }

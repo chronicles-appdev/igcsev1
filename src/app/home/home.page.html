@@ -1,20 +1,76 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>
-      Blank
-    </ion-title>
-  </ion-toolbar>
-</ion-header>
 
 <ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Blank</ion-title>
-    </ion-toolbar>
-  </ion-header>
-
-  <div id="container">
-    <strong>Ready to create an app?</strong>
-    <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
+  <div class="top-button">
+   
+    
+      <ion-button fill="outline" color="danger"  (click)="openSideMenu()">Menu</ion-button>
+  
   </div>
+ 
+  <div class="second-box">
+    <ion-avatar>
+      <img alt="Learn Africa Image" src="https://ionicframework.com/docs/img/demos/avatar.svg" />
+    </ion-avatar>
+    <p>Welcome</p>
+    <h4>Regina Daniel</h4>
+ 
+
+  </div>
+ 
+
+    <ion-grid>
+      <ion-row>
+        <ion-col size="4" size-xs="12">
+          <div class="testTaken">
+            <span class="left">
+              <h4>Test Taken</h4>
+              <ion-text>500</ion-text>
+            </span>
+    
+            <span class="right">
+              <ion-icon class="icon" name="book"></ion-icon>
+              <ion-icon name="arrow-forward"></ion-icon>
+    
+            </span>
+    
+          </div>
+        </ion-col>
+    
+        <ion-col size="4" size-xs="12">
+          <div class="testPassed">
+            <span class="left">
+              <h4>Test Taken</h4>
+              <ion-text>500</ion-text>
+            </span>
+    
+            <span class="right">
+              <ion-icon  class="icon"  name="book"></ion-icon>
+              <ion-icon name="arrow-forward"></ion-icon>
+    
+            </span>
+    
+          </div>
+        </ion-col>
+    
+    
+        <ion-col size="4" size-xs="12">
+          <div class="testFailed">
+            <span class="left">
+              <h4>Test Taken</h4>
+              <ion-text>500</ion-text>
+            </span>
+    
+            <span class="right">
+              <ion-icon  class="icon"  name="book"></ion-icon>
+              <ion-icon name="arrow-forward"></ion-icon>
+    
+            </span>
+    
+          </div>
+        </ion-col>
+      </ion-row>
+
+    
+    </ion-grid>
+   
 </ion-content>

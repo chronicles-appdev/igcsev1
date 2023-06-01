@@ -1,0 +1,55 @@
+
+
+<ion-content [fullscreen]="true">
+
+ <div class="centralize">
+  <ion-grid class="regSection">
+    <ion-row>
+      <div class="signup">
+        <h2  style="color: var(--ion-color-primary)" >Sign Up</h2>
+        <p>Please enter your correct details below</p>
+      </div>
+    </ion-row>
+
+
+    <ion-row>
+      <ion-col>
+
+      
+        <form [formGroup]="registrationForm1">
+
+               
+
+          <ion-input label="Student Full Name" label-placement="floating" fill="outline" placeholder="Enter you names here"  formControlName="fullName" type="text" name="fullName"  required></ion-input>
+
+
+          <ion-input label="Your Email Address" label-placement="floating" fill="outline" placeholder="Enter Email here"  formControlName="email" type="email" name="email"  required></ion-input>
+
+
+          <ion-select formControlName="class">
+            <ion-select-option value="">Select Level</ion-select-option>
+            <ion-select-option value="primary">Primary </ion-select-option>
+            <ion-select-option value="secondary">Secondary </ion-select-option>
+          </ion-select>
+
+
+        
+          <ion-input label="Your Phone Number" label-placement="floating" fill="outline" placeholder="Enter Phone Number here"  formControlName="phoneNumber" type="phoneNumber" name="phoneNumber"  required></ion-input>
+
+          <ion-checkbox  labelPlacement="end">I agree to the terms and conditions provided </ion-checkbox>
+
+         
+        <ion-button type="submit" [disabled]="registrationForm1.invalid" expand="block">Register</ion-button>
+      </form>
+      </ion-col>
+    </ion-row>
+   </ion-grid>
+
+ </div>
+ 
+
+
+
+
+
+</ion-content>

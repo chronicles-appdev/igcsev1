@@ -1,0 +1,119 @@
+ion-content {
+    .header {
+        display: block;
+        margin: 1rem 0px 1px 10px;
+
+        ion-chip {
+            --background: white;
+        }
+    }
+
+    .dash {
+
+        background-color: #741CA6;
+         padding: 5px 10px 5px 10px;
+            // overflow: auto;
+            // width: 100%;
+            // margin: 10px 0px 10px 0px;
+        
+        display: flex;
+        align-items: center; 
+        .left {
+            flex: 1;
+         h4 {
+            font-family: 'Space Grotesk';
+            font-style: normal;
+            font-weight: 700;
+            font-size: 14px;
+            line-height: 24px;
+            /* or 172% */
+  
+            display: flex;
+            align-items: center;
+            text-align: center;
+            letter-spacing: -0.379256px;
+            font-feature-settings: 'case' on;
+  
+            /* Text color/ White */
+  
+            color: #FCFCFC;
+          }
+  
+          p{
+            font-family: 'Space Grotesk';
+          font-style: normal;
+          font-weight: 400;
+          font-size: 12.3265px;
+          line-height: 24px;
+          /* or 195% */
+  
+          letter-spacing: -0.379256px;
+          font-feature-settings: 'case' on;
+  
+          /* Text color/ White */
+  
+          color: #FCFCFC;
+  
+  
+          /* Inside auto layout */
+  
+          flex: none;
+          order: 1;
+          flex-grow: 0;
+          }
+         
+        }
+        .right {
+            margin-left: 20px; 
+        }
+
+
+      }
+
+      .content {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 0px;
+        gap: 50px;
+
+        position: absolute;
+        width: 189px;
+        height: 430px;
+        left: calc(50% - 189px/2 - 0.5px);
+        top: 240px;
+
+   
+
+      .card {
+        box-sizing: border-box;
+
+        /* Auto layout */
+
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding: 21.3831px;
+        
+        width: 179px;
+        height: 150px;
+
+       
+
+        /* Inside auto layout */
+
+        flex: none;
+        order: 1;
+        flex-grow: 0;
+
+        border: 2px solid;
+        border-image-source: linear-gradient(180deg, #5293EE 14.06%, #7625E6 71.35%);
+        border-image-slice: 1;
+        border-radius: 8px;
+
+      
+
+      }
+    }
+}

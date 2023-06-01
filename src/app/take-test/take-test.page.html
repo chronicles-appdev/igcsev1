@@ -1,0 +1,65 @@
+<ion-content [fullscreen]="true">
+<ion-badge (click)="goHome()">
+ 
+  <ion-label><ion-icon name="arrow-back"></ion-icon> Back</ion-label>
+</ion-badge>
+  <div class="centralize">
+    <ion-grid class="regSection">
+      <ion-row>
+        <div class="signup">
+
+          <h2 style="color: var(--ion-color-primary)">Practice Test</h2>
+          <p>Fill in the text fields with the correct details of the practice test you will like to take</p>
+        </div>
+      </ion-row>
+
+
+      <ion-row>
+        <ion-col>
+
+
+          <form [formGroup]="registrationForm1">
+
+
+ 
+          <ion-select formControlName="year">
+            <ion-select-option value="">Select Year</ion-select-option>
+            <div  *ngFor="let each of tests">
+              <span>{{ each }}</span>
+              <ion-select-option value="{{ each.id }}">{{ each.test_name }} </ion-select-option>
+            </div>
+          </ion-select>
+
+
+          <ion-select formControlName="subject">
+            <ion-select-option value="">Select Subject</ion-select-option>
+            <div *ngFor="let each1 of subjects">
+                <span>{{ each1 }}</span>
+              <ion-select-option value="{{ each1.id }}">{{ each1.subject_name }} </ion-select-option>
+            </div>
+          </ion-select>
+
+          <ion-select formControlName="type">
+            <ion-select-option value="">Select Test Type</ion-select-option>
+            <div *ngFor="let each2 of years">
+                <span>{{ each2 }}</span>
+              <ion-select-option value="{{ each2.id }}">{{ each2.year_name }} </ion-select-option>
+            </div>
+          </ion-select>
+
+
+
+            <ion-button type="submit" (click)="onSubmit()" [disabled]="registrationForm1.invalid" expand="block">Register</ion-button>
+          </form>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+
+  </div>
+
+
+
+
+
+
+</ion-content>

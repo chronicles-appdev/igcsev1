@@ -1,0 +1,27 @@
+<ion-header [translucent]="true" mode="ios">
+  <ion-toolbar>
+    <h3 slot="start">Mathematics</h3>
+    <ion-label slot="end">
+      <!-- <ion-text>Time Left-</ion-text> -->
+
+      <ion-chip class="text-danger" *ngFor="let tim of duration">
+        <ion-icon name="alarm"></ion-icon>
+        &nbsp; {{ times }}
+
+
+      </ion-chip>
+    </ion-label>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  
+   <app-question [questionid]="2"></app-question>
+ 
+
+  <div class="nextprev">
+    <ion-button fill="outline" color="warning">Previous</ion-button>
+    <ion-button fill="outline" color="primary" style="float: right;">Previous</ion-button>
+  
+  </div>
+</ion-content>

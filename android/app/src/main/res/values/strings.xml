@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">IGCSE MasterPre</string>
+    <string name="title_activity_main">IGCSE MasterPre</string>
+    <string name="package_name">com.successbox.igcse</string>
+    <string name="custom_url_scheme">com.successbox.igcse</string>
+</resources>

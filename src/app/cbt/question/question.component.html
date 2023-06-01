@@ -1,0 +1,26 @@
+<div class="testarea">
+  <h2>is {{ questionid }}</h2>
+  <div class="quest" *ngFor="let quest of questionsA">
+    <h4>Question 1  </h4>
+    <h5> {{ quest.questionText }} </h5>
+
+  </div>
+  <div class="options" *ngFor="let quest of options">
+
+    <ion-list>
+      <ion-radio-group value="end">
+
+        <ion-item lines="none">
+          <ion-radio value="start" justify="space-between">
+            <p style="white-space: normal; "> Line Packed at the Start</p>
+          </ion-radio>
+        </ion-item>
+
+
+      </ion-radio-group>
+    </ion-list>
+
+  </div>
+
+
+</div>

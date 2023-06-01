@@ -1,0 +1,158 @@
+ion-header {
+    .header {
+
+        margin: 1rem 0px 1rem -1em;
+    
+        
+            display: flex;
+            align-items: center;
+        ion-chip {
+            margin-right: auto; /* Push the ion-chip to the left */
+            --background: white;
+        }
+    
+        ion-label {
+            text-align: center;
+            margin: 0 15%; 
+        }
+        }
+    
+}
+
+ion-content {
+  
+    .content {
+            margin: 1rem;
+        .instruction {
+            
+            h5{
+                font-family: 'Space Grotesk';
+                font-style: normal;
+                font-weight: 700;
+                font-size: 16px;
+                line-height: 20px;
+                letter-spacing: -0.03em;
+
+                /* Text color/Black */
+
+                color: #060219;
+
+            }
+            p{
+                font-family: 'Space Grotesk';
+                font-style: normal;
+                font-weight: 400;
+                font-size: 14px;
+                line-height: 186.6%;
+                /* or 26px */
+
+                display: flex;
+                align-items: center;
+                letter-spacing: -0.03em;
+
+                /* Text color/Black */
+
+                color: #060219;
+            }
+        }
+
+        .must {
+            h5{
+                font-family: 'Space Grotesk';
+                font-style: normal;
+                font-weight: 700;
+                font-size: 16px;
+                line-height: 20px;
+                letter-spacing: -0.03em;
+
+                /* Text color/Black */
+
+                color: #060219;
+
+            }
+            ul li{
+                font-family: 'Space Grotesk';
+                font-style: normal;
+                font-weight: 400;
+                font-size: 14px;
+                line-height: 186.6%;
+                /* or 26px */
+
+                display: flex;
+                align-items: center;
+                letter-spacing: -0.03em;
+
+                /* Text color/Black */
+
+                color: #060219;
+            }
+            
+        }
+
+        .how {
+            h5{
+                font-family: 'Space Grotesk';
+                font-style: normal;
+                font-weight: 700;
+                font-size: 16px;
+                line-height: 20px;
+                letter-spacing: -0.03em;
+
+                /* Text color/Black */
+
+                color: #060219;
+
+            }
+            ul li {
+                font-family: 'Space Grotesk';
+                font-style: normal;
+                font-weight: 400;
+                font-size: 14px;
+                line-height: 186.6%;
+                /* or 26px */
+
+                display: flex;
+                align-items: center;
+                letter-spacing: -0.03em;
+
+                /* Text color/Black */
+
+                color: #060219;
+            }
+        }
+        .confirmation {
+            margin: 5px;
+            ion-checkbox {
+                --size: 32px;
+                --checkbox-background-checked: #6815ec;
+                
+              }
+              
+              ion-checkbox::part(container) {
+                border-radius: 6px;
+                border: 2px solid #6815ec;
+              }
+
+
+      button {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        padding: 15px 134px;
+        gap: 10px;
+        margin: 1rem;
+        position: absolute;
+        width: 80%;
+        height: 50px;
+       // left: calc(50% - 389px/2 - 0.5px);
+        color: white;
+
+        /* Color/Primary linear */
+
+        background: linear-gradient(180deg, #eea052 14.06%, #bb6605 71.35%);
+        border-radius: 10px;
+      }
+        }
+    }
+}

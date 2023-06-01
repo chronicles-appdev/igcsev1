@@ -1,0 +1,77 @@
+ion-header {
+    ion-toolbar {
+        h3 {
+            margin: 1rem;
+            color: red;
+        }
+
+        ion-label {
+            margin: 1rem;
+
+            ion-text {
+                display: block;
+                margin-right: 8px;
+            }
+
+            .hide {
+                display: none;
+            }
+
+            ion-chip {
+                display: block;
+                --background: white;
+                color: red;
+
+                ion-icon {
+                    color: red;
+                }
+            }
+        }
+    }
+}
+
+ion-content {
+    .testarea {
+        //  margin: 1rem;
+
+        .quest {
+            padding: 1rem;
+            background: #52595D;
+            color: white;
+            width: 100%;
+            font-family: 'Space Grotesk';
+            font-style: normal;
+            font-weight: 500;
+            font-size: 15px;
+            line-height: 19px;
+
+            align-items: center;
+            letter-spacing: -0.03em;
+            margin-bottom: 5rem;
+            flex: none;
+            order: 0;
+            flex-grow: 0;
+        }
+
+        .options {
+            margin-bottom: 2rem;
+
+            ion-list {
+
+                ion-radio-group {
+
+                    ion-item {
+                        border: 1px solid gray;
+                        border-radius: 1rem;
+                        margin: 1rem;
+                        padding: 2px;
+
+
+                    }
+                }
+            }
+        }
+
+
+    }
+}
