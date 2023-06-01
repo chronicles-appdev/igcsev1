@@ -28,7 +28,7 @@ export class InstructionPage implements OnInit {
   
   }
   ngOnInit() {
-    this.getTest();
+   // this.getTest();
   }
 
   async getTest() {

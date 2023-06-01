@@ -38,11 +38,9 @@ export class QuestionComponent {
 
 
   async getQuestion(question_id: number) {
-    // const check: any = (await this._sqlite.isConnection('igcse001')).result;
-    // console.log(check);
-   //this._sqlite.closeConnection('igcse001');
+    
     try {
-       //
+      
       // const first: SQLiteDBConnection = await this._sqlite.retrieveConnection('igcse001');
       const first: any = await this._sqlite.createConnection(
         'igcse001',
@@ -63,7 +61,7 @@ export class QuestionComponent {
       const paramsOptions = [question_id];
       const rest: any = await first.query(queryOptions, paramsOptions);
       this.options = rest.values;
-      this._sqlite.closeAllConnections();
+      //this._sqlite.closeConnection('igcse001');
     } catch (error) {
       console.error(error);
     } finally {

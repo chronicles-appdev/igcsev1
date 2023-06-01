@@ -13,6 +13,8 @@ import { Router } from '@angular/router';
 import { IonModal } from '@ionic/angular';
 import { ViewChild } from '@angular/core';
 import { DatabaseService } from '../services/database.service';
+import { QuestionDb } from '../model/question.model';
+import { DbserveService } from '../services/dbserve.service';
 @Component({
   selector: 'app-take-test',
   templateUrl: './take-test.page.html',
@@ -42,7 +44,7 @@ export class TakeTestPage implements OnInit {
 
 
 
-  constructor(private _sqlite: DatabaseService, private formBuilder: FormBuilder, private http: HttpClient, private alertController: AlertController, private router: Router,
+  constructor(private _sqlite: DatabaseService, private dbserve: DbserveService, private formBuilder: FormBuilder, private http: HttpClient, private alertController: AlertController, private router: Router,
     private loadingCtrl: LoadingController) {
 
    
@@ -65,47 +67,60 @@ export class TakeTestPage implements OnInit {
     // let result: any = await this._sqlite.echo('Hi');
      let first = await this._sqlite.createConnection('igcse001', false,'no-encryption', 1,);
      await first.open();
-   let save: any = await first.query(`INSERT INTO test_taken (year_id, test_id, subject_id) VALUES ('${yead_id}','${test_id}','${subject_id}' )`);
+    let save: any = await first.query(`INSERT INTO test_taken (year_id, test_id, subject_id) VALUES ('${yead_id}','${test_id}','${subject_id}' )`);
+    
     //return save;
     console.log(save);
 
     let taken: any = await first.query(`SELECT * FROM test_taken ORDER BY id desc limit 1`);
- console.log(taken.values);
-    let questions: any = await first.query(`SELECT * FROM questions  ORDER BY RANDOM()  limit 10`);
+    console.log(taken.values);
     
- console.log(questions.values);
-    let quests: any = questions.values;
-  
+    for (const useq of taken.values) { 
+      let tt_id = useq.id;
+       const data1 = {
+     
+        test_taken_id: tt_id,
+        
+   };
+     // Convert data to JSON string
+      const jsonData1 = JSON.stringify(data1);
 
-  let questing: any = await first.query(`INSERT INTO marking (year_id, test_id, subject_id) VALUES ('${yead_id}','${test_id}','${subject_id}' )`);
+    // Save JSON string to local storage
+      localStorage.setItem('test_takenDetail', jsonData1);
+      
+        let questions: any = await first.query(`SELECT * FROM questions  ORDER BY RANDOM()  limit 10`);
+    
+      //console.log(tt_id);
+      console.log(questions.values);
+      let quests: any = questions.values;
+      for (const item of quests) {
+        let q_id = item.id;
+        let questing: any = await first.query(`INSERT INTO marking (question_id, test_taken_id, selected_id, correct_id) VALUES ('${q_id}','${tt_id}', 0, 0)`);
+      }
+   
+  
+    }
+    
   
   this._sqlite.closeConnection('igcse001');
   }
 
   async getTest() {
    
-    
-
-     let result: any = await this._sqlite.echo('Hi');
-     let first = await this._sqlite.createConnection('igcse001', false,'no-encryption', 1,);
-      await first.open();
-    
-
-   let ret: any = await first.query('SELECT * FROM test;');
-    this.tests = ret.values;
-   // console.log(this.tests.values);
-
-      let ret1: any = await first.query('SELECT * FROM subjects;');
-    this.subjects = ret1.values;
+   let ret: any = this.dbserve.getTests();
+   // this.tests = ret.values;
+  
+      let ret1: any =  this.dbserve.getSubjects();
+    //this.subjects = ret1.values;
     //console.log(this.subjects);
     
-     let ret2: any = await first.query('SELECT * FROM q_year;');
-    this.years = ret2.values;
+     let ret2: any =  this.dbserve.getYears();
+    //this.years = ret2.values;
    // console.log(this.years);
     
-     let ret3: any = await first.query(`SELECT * FROM test_taken`);
+     let ret3: any =  this.dbserve.getTestTaken();
  
-   this._sqlite.closeConnection('igcse001');
+ 
 
   }
 
@@ -113,23 +128,24 @@ export class TakeTestPage implements OnInit {
 
 
   onSubmit (){
-    const data = {
+   
+   
+       const data = {
      
-        year:  this.registrationForm1.value.year,
-        subject:  this.registrationForm1.value.subject,
+      
+       
         type:  this.registrationForm1.value.type,
       
    };
      // Convert data to JSON string
     const jsonData = JSON.stringify(data);
-
-    // Save JSON string to local storage
-    localStorage.setItem('testDetail', jsonData);
+       // Save JSON string to local storage
+      localStorage.setItem('testDetail', jsonData);
     let create = this.createTest(this.registrationForm1.value.year, this.registrationForm1.value.type, this.registrationForm1.value.subject);
 
     console.log(create);
-   
-  //return this.router.navigateByUrl('/instruction');
+   this._sqlite.closeConnection('igcse001');
+    return this.router.navigateByUrl('/instruction');
 
   }
 
@@ -137,7 +153,8 @@ export class TakeTestPage implements OnInit {
   goHome() {
     return this.router.navigateByUrl('home');
   }
-  ngOnInit() {
+  async ngOnInit() {
+    await this._sqlite.initializePlugin();
     this.getTest();
   
   }

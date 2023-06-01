@@ -14,26 +14,24 @@ export class CbtPage implements OnInit {
   anoth!: number;
   anoth1!: number;
   num_quest: any;
+  marking: any;
  
   question_id: any;
   constructor(private route: ActivatedRoute, private router: Router, private _sqlite: DatabaseService) { }
 
   ngOnInit() {
-     let testDetails: any = localStorage.getItem('testDetail');
+
+    let testDetails: any = localStorage.getItem('testDetail'); 
+    let test_takenDetail: any = localStorage.getItem('test_takenDetail');
    
-     const conv = JSON.parse(testDetails);
+    const conv = JSON.parse(testDetails);
+    const tt_ids = JSON.parse(test_takenDetail);
+    const tt_id = tt_ids.test_taken_id;
     const test_id = conv.type;
 
-     this._sqlite.closeAllConnections();
-        this.route.params.subscribe(params => {
-          if(this.route){
-          
-            this.question_id = this.route.snapshot.paramMap.get('id');
-            this.getTimer(this.question_id, test_id);
-          }
-         
+ 
+    this.getTimer(tt_id, test_id);
        
-        });
  
     
   }
@@ -56,7 +54,7 @@ export class CbtPage implements OnInit {
     return `${minutes} minutes`;
   }
   
-  async getTimer(question_id: any, test_id: any) {
+  async getTimer(tt_id: any, test_id: any) {
    
     const check: any = (await this._sqlite.isConnection('igcse001')).result;
     console.log(check);
@@ -64,7 +62,11 @@ export class CbtPage implements OnInit {
         try {
       
              let first: SQLiteDBConnection = await this._sqlite.retrieveConnection('igcse001');
-              await first.open();
+          await first.open();
+           await first.open();
+            let getTestTaken: any = await first.query(`SELECT * FROM marking WHERE  test_taken_id='${tt_id}'`);
+              this.marking = getTestTaken.values;
+            
             let getTest: any = await first.query(`SELECT * FROM test WHERE  id='${test_id}' ORDER BY id DESC LIMIT 1`);
               this.duration = getTest.values;
               this.anoth = this.duration[0].duration;
@@ -80,9 +82,9 @@ export class CbtPage implements OnInit {
         }
 
     } else {
-      this._sqlite.closeConnection('igcse001');
+     // this._sqlite.closeConnection('igcse001');
          try {
-      
+      this._sqlite.closeConnection('igcse001');
           const first: SQLiteDBConnection = await this._sqlite.createConnection(
           'igcse001',
           false,
@@ -90,6 +92,9 @@ export class CbtPage implements OnInit {
           1
               );
            await first.open();
+            let getTestTaken: any = await first.query(`SELECT * FROM marking WHERE  test_taken_id='${tt_id}'`);
+              this.marking = getTestTaken.values;
+            
             let getTest: any = await first.query(`SELECT * FROM test WHERE  id='${test_id}' ORDER BY id DESC LIMIT 1`);
               this.duration = getTest.values;
               this.anoth = this.duration[0].duration;
